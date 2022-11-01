@@ -1,0 +1,55 @@
+\documentclass[
+    hidelinks, %para evitar que apareçam caixas vermelhas ao redor de hyperlinks
+    12pt,               %Tamanho da letra
+    a4paper,            %Papel
+    oneside,            %Não pular paginas entre os capítulos
+    english,            %Para o Latex reconhecer termos em ingles
+    brazil,             %Lingua mãe do documento
+]{abntex2}          %Mudamos o tipo (classe) do nosso documento. agora ele obedece às normas da ABNT, e percebam a diferença total do documento!!!! tudo foi passado para português e organizado do jeito que estamos acostumados. Esse tipo, porém, precisa de uns ajustes poucos.
+
+% \usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=2cm]{geometry} 
+\usepackage[utf8]{inputenc}         %Caracteres especiais
+\usepackage[backend=biber, natbib=true]{biblatex}
+\addbibresource{Bibliografia.bib} % pode-se adicionar mais de um arquivo de bibliografia
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage{graphicx}               %Esse pacote é para colocar imagens!
+\usepackage{import}                 %Para importar outros documentos .tex
+
+\usepackage{fontspec} % adiciona a possibilidade de trocar a fonte padrão do TeX
+\setmainfont{Arial}
+% \renewcommand{\baselinestretch}{1.5}
+
+
+
+%Documentação:
+%https://ctan.math.illinois.edu/macros/latex/contrib/abntex2/doc/abntex2.pdf
+%Fontes:
+%https://www.overleaf.com/learn/latex/Font_typefaces
+
+\begin{document}
+
+\import{}{Capa.tex}                 %Importa nossa capa
+% \import{}{Folha_de_Rosto.tex}       %Importa nossa folha de rosto
+
+\tableofcontents                    %Sumário
+\newpage                            %Pula uma pagina
+
+\textual % informa o abntex2 que o texto do documento começa aqui
+% começando também a numeração das páginas e a apresentação de cabeçalho e rodapé
+
+% seu texto do documento vai aqui
+% também há a possibilidade de realizar imports
+
+
+
+
+
+% \postextual % informa o abntex2 que a parte de texto do trabalho já terminou
+
+% \chapter{Referências}
+
+\printbibliography[title=Referências]
+
+\end{document}
+
